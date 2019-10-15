@@ -11,7 +11,7 @@ import java.util.Iterator;
  *
  * @author ronaldo
  */
-public abstract class Edge implements Node{
+public abstract class Edge extends Node{
     
     private boolean hasNext = true;
     private final Node otherNode;

@@ -11,18 +11,20 @@ package edu.ufjf.dcc.prov.o;
  */
 public class NameTermPrefix extends TermPrefix{
     
-    final String name;
+    private final String name;
 
     public NameTermPrefix(String name, String term, Prefix prefix) {
         super(term, prefix);
         this.name = name;
     }
 
+    public String getName() {
+        return name;
+    }
+    
     @Override
     public String toString() {
         return super.toString() + ":" + this.name;
     }
-    
-    
     
 }

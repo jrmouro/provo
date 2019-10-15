@@ -9,8 +9,14 @@ package edu.ufjf.dcc.prov.o;
  *
  * @author ronaldo
  */
-public enum ProvClass {
-    Activity,
-    Agent,
-    Entity    
+public enum ProvoPropertyType {
+    wasGeneratedBy,
+    wasDerivedFrom,
+    wasAttributedTo,
+    startedAtTime,
+    used,
+    wasInformedBy,
+    endedAtTime,
+    wasAssociatedWith,
+    actedOnBehalfOf
 }
