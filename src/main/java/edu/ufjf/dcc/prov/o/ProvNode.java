@@ -11,7 +11,7 @@ package edu.ufjf.dcc.prov.o;
  */
 public class ProvNode extends Node{
         
-    private final NameTermPrefix nameTermPrefix;
+    protected final NameTermPrefix nameTermPrefix;
 
     public ProvNode(NameTermPrefix nameTermPrefix) {
         this.nameTermPrefix = nameTermPrefix;
@@ -20,11 +20,20 @@ public class ProvNode extends Node{
     public NameTermPrefix getNameTermPrefix() {
         return nameTermPrefix;
     }
-          
-    
+        
     @Override
     public String toString() {
-        return this.nameTermPrefix.toString();
+        
+        String ret = this.nameTermPrefix.toString() + "\n";
+        
+        if(this.edges.size() > 0){            
+            for (Node edge : this.edges) {
+                ret += edge.toString() + "\n";
+            }
+            return ret + ".";
+        }
+        
+        return ret + ".";
     }    
         
 }

@@ -31,7 +31,7 @@ public class Prefix {
 
     @Override
     public String toString() {
-        return this.prefix + ":\t<" + this.url.toString() + ">";
+        return "@prefix " + this.prefix + "\t<" + this.url.toString() + "> .\n";
     }
     
 }

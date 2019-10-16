@@ -23,7 +23,7 @@ import java.util.logging.Logger;
 
 public class Node implements Iterable{
     
-    private final List<Node> edges = new ArrayList();
+    protected final List<Node> edges = new ArrayList();
     
     public int size(){
         return this.edges.size();
@@ -41,32 +41,10 @@ public class Node implements Iterable{
     @Override
     public String toString() {
         String ret = "";
-        for (Iterator<Node> iterator = this.edges.iterator(); iterator.hasNext();) {
-            Node next = iterator.next();
+        for (Node next : this.edges) {
             ret += next.toString() + "\n";
         }
         return ret;
     }
     
-    
-    public void write(OutputStream os){
-        Writer writer = null;
-        try {
-            writer = new OutputStreamWriter(os, "UTF-8");
-            try {
-                writer.write(this.toString().toCharArray());
-            } catch (IOException ex) {
-                Logger.getLogger(Node.class.getName()).log(Level.SEVERE, null, ex);
-            }
-        } catch (UnsupportedEncodingException ex) {
-            Logger.getLogger(Node.class.getName()).log(Level.SEVERE, null, ex);
-        } finally {
-            try {
-                writer.close();
-            } catch (IOException ex) {
-                Logger.getLogger(Node.class.getName()).log(Level.SEVERE, null, ex);
-            }
-        }
-    }
-
 }

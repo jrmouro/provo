@@ -14,7 +14,7 @@ import java.util.Iterator;
 public abstract class Edge extends Node{
     
     private boolean hasNext = true;
-    private final Node otherNode;
+    private Node otherNode = null;
     private final Iterator<Node> iterator = 
             new Iterator(){
             @Override
@@ -31,6 +31,8 @@ public abstract class Edge extends Node{
         };
     
 
+    public Edge() {}
+    
     public Edge(Node otherNode) {
         this.otherNode = otherNode;
     }
@@ -38,8 +40,11 @@ public abstract class Edge extends Node{
     public Node getOtherNode() {
         return otherNode;
     }
-    
-    
+
+    public void setOtherNode(Node otherNode) {
+        this.otherNode = otherNode;
+    }
+        
     @Override
     public Iterator<Node> iterator() {
         this.hasNext = true;
