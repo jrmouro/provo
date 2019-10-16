@@ -31,5 +31,8 @@
 	a prov:Activity;
 	prov:used                :ontology1;
 	prov:used                :ontology2;
+	prov:wasAssociatedWith   :User;
+	prov:startedAtTime       "2011-07-14T01:01:01Z"^^xsd:dateTime;
+	prov:endedAtTime         "2011-07-14T02:02:02Z"^^xsd:dateTime;
 .
 

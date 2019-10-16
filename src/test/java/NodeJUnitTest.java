@@ -69,6 +69,10 @@ public class NodeJUnitTest {
         exp.add(new ProvProperty(new NameTermPrefix("a ",new NameTermPrefix("Activity","prov:"))));
         exp.add(new ProvProperty(new NameTermPrefix("used", "prov:"), o1));
         exp.add(new ProvProperty(new NameTermPrefix("used", "prov:"), o2));
+        exp.add(new ProvProperty(new NameTermPrefix("wasAssociatedWith", "prov:"), user));
+        exp.add(new ProvProperty(new NameTermPrefix("startedAtTime", "prov:"), new ValueNode("2011-07-14T01:01:01Z",'\"', new NameTermPrefix("dateTime","xsd:"))));
+        exp.add(new ProvProperty(new NameTermPrefix("endedAtTime", "prov:"), new ValueNode("2011-07-14T02:02:02Z",'\"', new NameTermPrefix("dateTime","xsd:"))));
+        
         dc.add(exp);
         dc.add("\n\n");
         
