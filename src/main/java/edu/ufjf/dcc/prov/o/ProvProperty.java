@@ -12,36 +12,68 @@ package edu.ufjf.dcc.prov.o;
 public class ProvProperty extends Edge{
     
     private final TermPrefix namedProvPrefix;
-    public static Integer s = 30;
+    public static Integer tabPos = 30;
 
     public ProvProperty(TermPrefix namedProvPrefix, ProvNode otherNode) {
-        super(otherNode);
+        super(otherNode, namedProvPrefix.toString());
+        this.namedProvPrefix = namedProvPrefix;
+    }
+    
+    public ProvProperty(TermPrefix namedProvPrefix, ProvNode otherNode, String key) {
+        super(otherNode, key);
         this.namedProvPrefix = namedProvPrefix;
     }
     
     public ProvProperty(TermPrefix namedProvPrefix) {
-        super();
+        super(namedProvPrefix.toString());
         this.namedProvPrefix = namedProvPrefix;
     }
-
-    public void setS(Integer s) {
-        this.s = s;
-    }   
+   
 
     @Override
     public String toString() {
+        
         if(this.getOtherNode() != null)
-            if(this.getOtherNode() instanceof ValueNode)
+            
+            if(this.getOtherNode() instanceof ValueNode){
+                
                 return "\t" + this.sAux() + ((ValueNode)this.getOtherNode()).toString() + ";"; 
-            else
+                
+            }else if(this.getOtherNode() instanceof ValueNodeList){
+                
+                String ret = "\t" + this.namedProvPrefix.toString() + "\n";
+                
+                int i = 0;
+                
+                for (; i < this.getOtherNode().size() - 1; i++) {
+                    
+                    if(this.getOtherNode().get(i) instanceof ValueNode)
+                        ret += "\t\t" + this.getOtherNode().get(i).toString() + ",\n";
+                    else
+                        ret += "\t\t" + ((ProvNode)this.getOtherNode().get(i)).getNameTermPrefix().toString() + ",\n";
+                
+                }
+                
+                if(this.getOtherNode().get(i) instanceof ValueNode)
+                        ret += "\t\t" + this.getOtherNode().get(i).toString() + ";";
+                    else
+                        ret += "\t\t" + ((ProvNode)this.getOtherNode().get(i)).getNameTermPrefix().toString() + ";";
+                
+                return ret;
+            
+            
+            }else{
                 return "\t" + this.sAux() + ((ProvNode)this.getOtherNode()).getNameTermPrefix().toString() + ";"; 
+            }
+        
         return "\t" + this.namedProvPrefix.toString() + ";";
+        
     }
        
     
     public String sAux(){
         String ret = this.namedProvPrefix.toString();
-        for(int i = this.namedProvPrefix.toString().length(); i < s; i++)
+        for(int i = this.namedProvPrefix.toString().length(); i < tabPos; i++)
             ret += " ";
         
         return ret;

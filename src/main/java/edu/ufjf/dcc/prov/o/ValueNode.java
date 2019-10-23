@@ -14,27 +14,53 @@ public class ValueNode extends ProvNode{
     final private Object value;
     final private Character c1, c2;
     
+    public ValueNode(Object value, Character c,  NameTermPrefix nameTermPrefix, String key) {
+        super(nameTermPrefix, key);
+        this.value = value;
+        this.c1 = this.c2 = c;
+    }
+    
+    public ValueNode(Object value, Character c, String key) {
+        super(null, key);
+        this.value = value;
+        this.c1 = this.c2 = c;
+    }
+    
+    public ValueNode(Object value, Character c1,  Character c2, NameTermPrefix nameTermPrefix, String key) {
+        super(nameTermPrefix, key);
+        this.value = value;
+        this.c1 = c1;
+        this.c2 = c2;
+    }
+    
+    public ValueNode(Object value, Character c1,  Character c2, String key) {
+        super(null, key);
+        this.value = value;
+        this.c1 = c1;
+        this.c2 = c2;
+    }
+    
     public ValueNode(Object value, Character c,  NameTermPrefix nameTermPrefix) {
-        super(nameTermPrefix);
+        super(nameTermPrefix, value.toString());
         this.value = value;
         this.c1 = this.c2 = c;
     }
     
     public ValueNode(Object value, Character c) {
-        super(null);
+        super(null, value.toString());
         this.value = value;
         this.c1 = this.c2 = c;
     }
     
     public ValueNode(Object value, Character c1,  Character c2, NameTermPrefix nameTermPrefix) {
-        super(nameTermPrefix);
+        super(nameTermPrefix, value.toString());
         this.value = value;
         this.c1 = c1;
         this.c2 = c2;
     }
     
     public ValueNode(Object value, Character c1,  Character c2) {
-        super(null);
+        super(null, value.toString());
         this.value = value;
         this.c1 = c1;
         this.c2 = c2;
@@ -43,6 +69,9 @@ public class ValueNode extends ProvNode{
     public Object getValue() {
         return value;
     }
+
+    
+    
     
     
     @Override

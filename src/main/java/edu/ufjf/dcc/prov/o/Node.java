@@ -5,16 +5,9 @@
  */
 package edu.ufjf.dcc.prov.o;
 
-import java.io.IOException;
-import java.io.OutputStream;
-import java.io.OutputStreamWriter;
-import java.io.UnsupportedEncodingException;
-import java.io.Writer;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 /**
  *
@@ -23,25 +16,45 @@ import java.util.logging.Logger;
 
 public class Node implements Iterable{
     
-    protected final List<Node> edges = new ArrayList();
+    protected final String key;
+    protected final List<Node> children = new ArrayList();
+
+    public Node(String key) {
+        this.key = key;
+    }    
     
     public int size(){
-        return this.edges.size();
+        return this.children.size();
+    }
+    
+    public Node get(int index){
+        return this.children.get(index);
     }
     
     public void add(Node node){
-        this.edges.add(node);
+        this.children.add(node);
+    }
+    
+    public Node getChildByName(String key){
+        
+        for (Node node : this.children) {
+            if(node.key.equals(key))
+                return node;
+        }
+        
+        return null;
+        
     }
     
     @Override
     public Iterator<Node> iterator() {
-        return this.edges.iterator();
+        return this.children.iterator();
     }
 
     @Override
     public String toString() {
         String ret = "";
-        for (Node next : this.edges) {
+        for (Node next : this.children) {
             ret += next.toString() + "\n";
         }
         return ret;

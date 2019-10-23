@@ -13,7 +13,13 @@ public class ProvNode extends Node{
         
     protected final NameTermPrefix nameTermPrefix;
 
+    public ProvNode(NameTermPrefix nameTermPrefix, String key) {
+        super(key);
+        this.nameTermPrefix = nameTermPrefix;
+    }
+    
     public ProvNode(NameTermPrefix nameTermPrefix) {
+        super(nameTermPrefix.toString());
         this.nameTermPrefix = nameTermPrefix;
     }
 
@@ -24,10 +30,13 @@ public class ProvNode extends Node{
     @Override
     public String toString() {
         
+        if(this.nameTermPrefix == null)
+            return "null";
+        
         String ret = this.nameTermPrefix.toString() + "\n";
         
-        if(this.edges.size() > 0){            
-            for (Node edge : this.edges) {
+        if(this.children.size() > 0){            
+            for (Node edge : this.children) {
                 ret += edge.toString() + "\n";
             }
             return ret + ".";

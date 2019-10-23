@@ -30,7 +30,7 @@ public class NodeJUnitTest {
     public void test() throws MalformedURLException, IOException {
         
         DocPrint dc = new DocPrint();
-        ProvProperty.s = 25;
+        ProvProperty.tabPos = 25;
         
         dc.add(new Prefix("xsd:", new URL("http://www.w3.org/2001/XMLSchema#")));
         dc.add(new Prefix("foaf:", new URL("http://xmlns.com/foaf/0.1/")));

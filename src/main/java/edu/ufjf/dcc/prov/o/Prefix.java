@@ -11,12 +11,19 @@ import java.net.URL;
  *
  * @author ronaldo
  */
-public class Prefix {
+public class Prefix extends Node{
     
     private final String prefix;
     private final URL url;
+    
+    public Prefix(String prefix, URL url, String key) {
+        super(key);
+        this.prefix = prefix;
+        this.url = url;
+    }
 
     public Prefix(String prefix, URL url) {
+        super(prefix);
         this.prefix = prefix;
         this.url = url;
     }

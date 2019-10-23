@@ -31,9 +31,12 @@ public abstract class Edge extends Node{
         };
     
 
-    public Edge() {}
+    public Edge(String key) {
+        super(key);
+    }
     
-    public Edge(Node otherNode) {
+    public Edge(Node otherNode, String key) {
+        super(key);
         this.otherNode = otherNode;
     }
 
