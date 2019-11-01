@@ -167,10 +167,10 @@ public class ProvJUnitTest {
         bWeights.add(new ProvProperty(new NameTermPrefix("wasGeneratedBy", "prov:"), wc));
         prov.add(bWeights);
         
-        ProvNode weights = new ProvNode(new NameTermPrefix("Weights",":"));  
+        /*ProvNode weights = new ProvNode(new NameTermPrefix("Weights",":"));  
         weights.add(new ProvProperty(new NameTermPrefix("a ", new NameTermPrefix("Collection","prov:"))));
         weights.add(new ProvProperty(new NameTermPrefix("wasGeneratedBy", "prov:"), wc));
-        prov.add(weights);
+        prov.add(weights);*/
         
         ProvNode sFunction = new ProvNode(new NameTermPrefix("SimilarityFunction",":"));  
         sFunction.add(new ProvProperty(new NameTermPrefix("a ", new NameTermPrefix("Agent","prov:"))));
