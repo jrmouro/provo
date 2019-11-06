@@ -4,13 +4,13 @@
  * and open the template in the editor.
  */
 
-import edu.ufjf.dcc.prov.o.NameTermPrefix;
-import edu.ufjf.dcc.prov.o.Prefix;
-import edu.ufjf.dcc.prov.o.ProvSingleton;
-import edu.ufjf.dcc.prov.o.ProvNode;
-import edu.ufjf.dcc.prov.o.ProvProperty;
-import edu.ufjf.dcc.prov.o.ValueNode;
-import edu.ufjf.dcc.prov.o.ValueNodeList;
+import edu.ufjf.dcc.provo.NameTermPrefix;
+import edu.ufjf.dcc.provo.Prefix;
+import edu.ufjf.dcc.provo.ProvSingleton;
+import edu.ufjf.dcc.provo.ProvNode;
+import edu.ufjf.dcc.provo.ProvProperty;
+import edu.ufjf.dcc.provo.ValueNode;
+import edu.ufjf.dcc.provo.ValueNodeList;
 import java.net.MalformedURLException;
 import java.net.URL;
 import org.junit.After;
@@ -140,26 +140,26 @@ public class ProvJUnitTest {
         aFile.add(new ProvProperty(new NameTermPrefix("a ", new NameTermPrefix("Entity","prov:"))));
         prov.add(aFile);
         
-        ProvNode refBase = new ProvNode(new NameTermPrefix("ReferenceBase",":"));  
+        /*ProvNode refBase = new ProvNode(new NameTermPrefix("ReferenceBase",":"));  
         refBase.add(new ProvProperty(new NameTermPrefix("a ", new NameTermPrefix("Entity","prov:"))));
-        prov.add(refBase);
+        prov.add(refBase);*/
         
         ProvNode aEval = new ProvNode(new NameTermPrefix("AlignmentEvaluation",":"));
         aEval.add(new ProvProperty(new NameTermPrefix("a ", new NameTermPrefix("Activity","prov:"))));
         aEval.add(new ProvProperty(new NameTermPrefix("wasAssociatedWith", "prov:"), eval));
         aEval.add(new ProvProperty(new NameTermPrefix("used", "prov:"), sMatrix));
         aEval.add(new ProvProperty(new NameTermPrefix("used", "prov:"), aFile));
-        aEval.add(new ProvProperty(new NameTermPrefix("used", "prov:"), refBase));
+        //aEval.add(new ProvProperty(new NameTermPrefix("used", "prov:"), refBase));
         aEval.add(new ProvProperty(new NameTermPrefix("startedAtTime", "prov:"), new ValueNode("2011-07-14T01:01:01Z",'\"', new NameTermPrefix("dateTime","xsd:"))));
         aEval.add(new ProvProperty(new NameTermPrefix("endedAtTime", "prov:"), new ValueNode("2011-07-14T02:02:02Z",'\"', new NameTermPrefix("dateTime","xsd:"))));
         prov.add(aEval);        
         
-        ProvNode result = new ProvNode(new NameTermPrefix("ResultsGeneration",":"));
+        /*ProvNode result = new ProvNode(new NameTermPrefix("ResultsGeneration",":"));
         result.add(new ProvProperty(new NameTermPrefix("a ", new NameTermPrefix("Activity","prov:"))));
         result.add(new ProvProperty(new NameTermPrefix("wasInformedBy", "prov:"), aEval));
         result.add(new ProvProperty(new NameTermPrefix("startedAtTime", "prov:"), new ValueNode("2011-07-14T01:01:01Z",'\"', new NameTermPrefix("dateTime","xsd:"))));
         result.add(new ProvProperty(new NameTermPrefix("endedAtTime", "prov:"), new ValueNode("2011-07-14T02:02:02Z",'\"', new NameTermPrefix("dateTime","xsd:"))));
-        prov.add(result);
+        prov.add(result);*/
         
         ProvNode bWeights = new ProvNode(new NameTermPrefix("ReferenceBase",":"));  
         bWeights.add(new ProvProperty(new NameTermPrefix("a ", new NameTermPrefix("Collection","prov:"))));
@@ -181,7 +181,7 @@ public class ProvJUnitTest {
         mCalc.add(new ProvProperty(new NameTermPrefix("wasAssociatedWith", "prov:"), sFunction));
         mCalc.add(new ProvProperty(new NameTermPrefix("startedAtTime", "prov:"), new ValueNode("2011-07-14T01:01:01Z",'\"', new NameTermPrefix("dateTime","xsd:"))));
         mCalc.add(new ProvProperty(new NameTermPrefix("endedAtTime", "prov:"), new ValueNode("2011-07-14T02:02:02Z",'\"', new NameTermPrefix("dateTime","xsd:"))));
-        prov.add(result);
+        prov.add(mCalc);
         
         ProvNode aAlg = new ProvNode(new NameTermPrefix("AlignmentAlgorithm",":"));  
         aAlg.add(new ProvProperty(new NameTermPrefix("a ", new NameTermPrefix("Agent","prov:"))));

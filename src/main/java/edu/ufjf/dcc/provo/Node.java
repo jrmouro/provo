@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package edu.ufjf.dcc.prov.o;
+package edu.ufjf.dcc.provo;
 
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -31,7 +31,7 @@ public class Node implements Iterable{
         return this.children.get(index);
     }
     
-    public void add(Node node){
+    final public void add(Node node){
         this.children.add(node);
     }
     

@@ -1,7 +1,6 @@
 @prefix xsd:	<http://www.w3.org/2001/XMLSchema#> .
 @prefix foaf:	<http://xmlns.com/foaf/0.1/> .
 @prefix prov:	<http://www.w3.org/ns/prov#> .
-@prefix xlink:	<http://www.w3.org/1999/xlink> .
 @prefix :	<http://example.org#> .
 
 

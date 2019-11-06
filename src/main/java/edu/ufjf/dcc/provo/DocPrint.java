@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package edu.ufjf.dcc.prov.o;
+package edu.ufjf.dcc.provo;
 
 import java.io.OutputStream;
 import java.util.ArrayList;

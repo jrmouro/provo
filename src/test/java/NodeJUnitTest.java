@@ -4,12 +4,12 @@
  * and open the template in the editor.
  */
 
-import edu.ufjf.dcc.prov.o.DocPrint;
-import edu.ufjf.dcc.prov.o.Prefix;
-import edu.ufjf.dcc.prov.o.NameTermPrefix;
-import edu.ufjf.dcc.prov.o.ProvNode;
-import edu.ufjf.dcc.prov.o.ProvProperty;
-import edu.ufjf.dcc.prov.o.ValueNode;
+import edu.ufjf.dcc.provo.DocPrint;
+import edu.ufjf.dcc.provo.Prefix;
+import edu.ufjf.dcc.provo.NameTermPrefix;
+import edu.ufjf.dcc.provo.ProvNode;
+import edu.ufjf.dcc.provo.ProvProperty;
+import edu.ufjf.dcc.provo.ValueNode;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.OutputStream;
