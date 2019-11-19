@@ -19,4 +19,8 @@ public class DateTimeValueNode extends ValueNode{
         super(datetime.toString(),'\"', new NameTermPrefix("dateTime","xsd:"));
     }
     
+    public DateTimeValueNode() {
+        super(LocalDateTime.now().toString(),'\"', new NameTermPrefix("dateTime","xsd:"));
+    }
+    
 }

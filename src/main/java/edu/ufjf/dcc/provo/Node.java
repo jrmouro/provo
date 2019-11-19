@@ -21,7 +21,11 @@ public class Node implements Iterable{
 
     public Node(String key) {
         this.key = key;
-    }    
+    } 
+    
+    public Node() {
+        this.key = null;
+    } 
     
     public int size(){
         return this.children.size();
