@@ -15,16 +15,13 @@ import java.sql.Timestamp;
  */
 public class NameTermPrefixTimestamp extends NameTermPrefix{
 
-    public NameTermPrefixTimestamp(String name, String term, Prefix prefix) {
-        super(name.concat("." + String.valueOf(new Timestamp(System.currentTimeMillis()).getTime())), term, prefix);
+    public NameTermPrefixTimestamp(String name, String term, Prefix prefix, Timestamp timestamp) {
+        super(name.concat("." + String.valueOf(timestamp.getTime())), term, prefix);
     }
 
-    public NameTermPrefixTimestamp(String name, String term) {
-        super(name.concat("." + String.valueOf(new Timestamp(System.currentTimeMillis()).getTime())), term);
+    public NameTermPrefixTimestamp(String name, String term, Timestamp timestamp) {
+        super(name.concat("." + String.valueOf(timestamp.getTime())), term);
     }
 
-    public NameTermPrefixTimestamp(String term, NameTermPrefix... nameTermPrefixes) {
-        super(term, nameTermPrefixes);
-    }
     
 }
