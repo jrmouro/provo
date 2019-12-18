@@ -16,11 +16,11 @@ import java.sql.Timestamp;
 public class NameTermPrefixTimestamp extends NameTermPrefix{
 
     public NameTermPrefixTimestamp(String name, String term, Prefix prefix, Timestamp timestamp) {
-        super(name.concat("." + String.valueOf(timestamp.getTime())), term, prefix);
+        super(name.concat("_" + String.valueOf(timestamp.getTime())), term, prefix);
     }
 
     public NameTermPrefixTimestamp(String name, String term, Timestamp timestamp) {
-        super(name.concat("." + String.valueOf(timestamp.getTime())), term);
+        super(name.concat("_" + String.valueOf(timestamp.getTime())), term);
     }
 
     

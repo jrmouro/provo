@@ -11,7 +11,7 @@ import java.util.Iterator;
  *
  * @author ronaldo
  */
-public abstract class Edge extends Node{
+public class Edge extends Node{
     
     private boolean hasNext = true;
     private Node otherNode = null;
@@ -19,7 +19,9 @@ public abstract class Edge extends Node{
             new Iterator(){
             @Override
             public boolean hasNext() {
-                return hasNext;
+                if(otherNode != null)
+                    return hasNext;
+                return false;
             }
 
             @Override
@@ -27,6 +29,8 @@ public abstract class Edge extends Node{
                 hasNext = false;
                 return otherNode;
             }
+            
+            
             
         };
     

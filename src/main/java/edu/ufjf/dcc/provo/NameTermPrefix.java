@@ -19,12 +19,12 @@ public class NameTermPrefix extends TermPrefix{
 
     public NameTermPrefix(String name, String term, Prefix prefix) {
         super(term, prefix);
-        this.name = name;
+        this.name = name.replace('.', '_');
     }
     
     public NameTermPrefix(String name, String term) {
         super(term);
-        this.name = name;
+        this.name = name.replace('.', '_');
     }
     
     public NameTermPrefix(String term, NameTermPrefix... nameTermPrefixes) {

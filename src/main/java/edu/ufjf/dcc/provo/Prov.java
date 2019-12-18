@@ -46,21 +46,21 @@ public class Prov extends Node{
                 dc.add(node);
         }
         
-        dc.add("\n\n");
+        
         
         for (Iterator<Node> it = this.iterator(); it.hasNext();) {
-            Node node = it.next();
+            Node node = it.next();            
             if(!(node instanceof Prefix)){
+                dc.add("\n");
                 if(node instanceof Prov)
                     ((Prov)node).prepare(dc, propertyTabPos);
                 else{                
                     dc.add(node);
-                    dc.add("\n\n");
+                    dc.add("\n");
                 }
+                //dc.add("\n");
             }
         }
-        
-        
         
     }
     

@@ -26,6 +26,10 @@ public class Node implements Iterable{
     public Node() {
         this.key = null;
     } 
+
+    public String getKey() {
+        return key;
+    }
     
     public int size(){
         return this.children.size();
@@ -39,7 +43,7 @@ public class Node implements Iterable{
         this.children.add(node);
     }
     
-    public Node getChildByName(String key){
+    public Node getChildByKey(String key){
         
         for (Node node : this.children) {
             if(node.key.equals(key))
